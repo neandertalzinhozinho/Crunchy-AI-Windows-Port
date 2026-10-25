@@ -1,10 +1,12 @@
 # Crunchy AI — Windows x64
 
-Nome do aplicativo Windows: **Crunchy AI** (slogan: **Som crocante**). Nome
-proposto para publicação: **Crunchy AI — Windows Port** (repositório sugerido:
-`Crunchy-AI-Windows-Port`). Este é um fork/port comunitário independente do
+Nome do aplicativo Windows: **Crunchy AI** (slogan: **Som crocante**). O
+repositório público é [Crunchy AI — Windows Port](https://github.com/neandertalzinhozinho/Crunchy-AI-Windows-Port).
+Este é um fork/port comunitário independente do
 [Fovty/HushMic](https://github.com/Fovty/HushMic), não uma versão oficial do
 projeto upstream. Preservar os avisos e licenças MIT/Apache-2.0 aplicáveis.
+
+![Interface do Crunchy AI para Windows com VB-CABLE conectado e controles de supressão e monitoramento](../docs/img/crunchy-ai-windows.png)
 
 Windows 11 x64 é o alvo prioritário. Windows 10 x64 é alvo secundário e precisa
 de validação própria.

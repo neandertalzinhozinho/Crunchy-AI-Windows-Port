@@ -8,12 +8,14 @@
 
 > **Port/fork independente do [Fovty/HushMic](https://github.com/Fovty/HushMic).** Não é uma versão oficial do projeto original. Créditos e licenças MIT/Apache-2.0 originais permanecem nos arquivos deste repositório.
 
+<p align="center">
+  <img src="docs/img/crunchy-ai-windows.png" alt="Interface do Crunchy AI para Windows com VB-CABLE conectado e controles de supressão e monitoramento" width="640">
+</p>
+
 ## Instalação
 
-O instalador será disponibilizado como artefato CI após a primeira publicação e execução do workflow Windows.
-
 1. Instale o [VB-CABLE oficial da VB-Audio](https://vb-audio.com/Cable/) separadamente e reinicie se o instalador solicitar.
-2. Baixe e execute o artefato `CrunchyAI-Windows-x64` na execução mais recente do workflow Windows em Actions. O instalador do Crunchy AI é por usuário e não requer elevação.
+2. Baixe `CrunchyAI-Setup-x64.exe` (instalador) ou `CrunchyAI-Windows-x64-App.zip` (versão portátil) na página de [releases](https://github.com/neandertalzinhozinho/Crunchy-AI-Windows-Port/releases/latest). O instalador do Crunchy AI é por usuário e não requer elevação.
 3. Abra o Crunchy AI, escolha seu microfone físico e inicie o processamento.
 4. No Discord, OBS ou outro programa, selecione **CABLE Output (VB-Audio Virtual Cable)** como microfone.
 
