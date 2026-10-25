@@ -1,0 +1,32 @@
+name: Windows x64 development build
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    paths: ['windows/**', 'crates/hushmic-denoiser/**', '.github/workflows/windows.yml']
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - uses: dtolnay/rust-toolchain@fa04a1451ff1842e2626ccb99004d0195b455a88
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+      - name: Check formatting
+        run: cargo fmt --manifest-path windows/app/Cargo.toml --check
+      - name: Test and build Windows application
+        shell: pwsh
+        run: ./windows/test.ps1
+      - name: Upload installer and portable package
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: CrunchyAI-Windows-x64
+          path: |
+            dist/CrunchyAI-Setup-x64.exe
+            dist/CrunchyAI-Windows-x64-App.zip
+          if-no-files-found: error
+          retention-days: 30

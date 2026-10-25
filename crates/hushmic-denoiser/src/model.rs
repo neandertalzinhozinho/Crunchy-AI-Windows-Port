@@ -239,7 +239,11 @@ mod tests {
     fn loads_and_runs_one_frame() {
         let (Some(mp), Some(rt)) = (
             dev_asset("assets/models/dpdfnet8_48khz_hr.onnx"),
-            dev_asset("assets/lib/libonnxruntime.so"),
+            dev_asset(if cfg!(target_os = "windows") {
+                "assets/lib/onnxruntime.dll"
+            } else {
+                "assets/lib/libonnxruntime.so"
+            }),
         ) else {
             eprintln!("skipping loads_and_runs_one_frame: assets not provisioned");
             return;

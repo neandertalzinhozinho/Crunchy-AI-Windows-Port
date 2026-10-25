@@ -1,0 +1,25 @@
+[package]
+name = "hushmic-windows"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+rust-version = "1.88"
+
+[[bin]]
+name = "hushmic"
+path = "src/main.rs"
+
+# Independent workspace: Linux desktop dependencies must not enter this build.
+[workspace]
+
+[dependencies]
+anyhow = "1"
+cpal = "0.16"
+crossbeam-queue = "0.3"
+eframe = { version = "0.33.3", default-features = false, features = ["glow", "default_fonts"] }
+hushmic-denoiser = { path = "../../crates/hushmic-denoiser" }
+# Used only to decode the bundled Crunchy AI window/taskbar icon.
+image = { version = "0.25.6", default-features = false, features = ["png"] }
+
+[profile.release]
+strip = true

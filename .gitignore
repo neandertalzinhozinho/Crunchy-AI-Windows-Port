@@ -6,6 +6,7 @@
 /assets/models/*.onnx
 /assets/models/*.weights.f32
 /assets/lib/*.so*
+/assets/lib/*.dll
 /tests/fixtures/*.wav
 
 # Release build outputs + provisioning scratch
@@ -30,3 +31,14 @@
 
 # Python bytecode (the ci/ scripts import each other in tests)
 __pycache__/
+
+# Windows port: downloaded models/runtime, driver intermediate outputs.
+/windows/assets/
+!/windows/assets/
+!/windows/assets/crunchy-ai-icon.png
+!/windows/assets/crunchy-ai.ico
+/windows/driver/**/x64/
+/windows/driver/**/ARM64/
+/windows/driver/**/Debug/
+/windows/driver/**/Release/
+*.user
